@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <title>Úgynevezett közvetítés</title>
+  <script>
+    if(/https?:\/\/localhost:3000/.test(location.href)){
+      var res = /https?:\/\/localhost:3000\/(#[0-9]+p)/.exec(location.href)
+      var quality = res && res[1] || ""
+      location.href = "https://google.com" + quality
+    }
+  </script>
+</head>
+<body>
+  <div class="media">
+    <div class="tv">
+      <iframe
+        src="https://player.mediaklikk.hu/playernew/player.php?video=mtv4live&osfamily=Linux&browsername=Chrome" 
+        referrerpolicy="no-referrer"
+        allow="encrypted-media"
+        scrolling="no"
+        marginwidth="0" marginheight="0"
+        class="iframe-player-api"
+      ></iframe>
+      <div class="wall"></div>
+    </div>
+    <audio url="http://stream.tilos.hu/tilos"></audio>
+  </div>
+  <div class="controls">
+    <div class="panel">
+      <button class="info">📜</button>
+      <button class="chat">💬</button>
+      <button class="sync">⏰</button>
+    </div>
+    <div class="sync hidden">
+      <button>📡</button>
+      <button>-1</button><button>-0.1</button><button>-0.05</button>
+      <input id="input" type="text" placeholder="..." readonly disabled>
+      <button>+0.05</button><button>+0.1</button><button>+1</button>
+      d:<span class="delay-now"></span>
+    </div>
+    <div class="volume">
+        <span>📻</span><input type="range" min="0" max="1" step="any" value="0"><span>📺</span>
+    </div>
+    <div class="fullscreen">
+      <button>⚽</button>
+    </div>
+  </div>
+  <div class="info-modal">
+    <div>
+      <p class="exit"><a>✖</a></p>
+      <div class="content">
+          <p class="header">Úgynevezett közvetítés</p>
+          <p>1. Add hozzá a böngésződhöz ezt a kiegészítőt:</p>
+          <p>
+            <a href="https://chrome.google.com/webstore/detail/mfbfgmofjjbmbjfcjnjicpnmjkeljgfi">chrome</a>
+            <a href="https://addons.mozilla.org/hu/firefox/addon/iframe-player-api/">firefox</a></span>
+          </p>
+          <p>2. Kattints rá <img src="logo32.png" alt="logo"> ikonra, hogy zöldre váltson!</p>
+          <p>3. Felugró kérésben engedélyezd a hozzáférést!</p>
+          <p class="footer first">Firefox-ban kétszer kell megnyomni az ikont.</p>
+          <p class="footer">Ha valami elkezd nem működni, akkor nyisd meg az oldalt újra.</p>
+          <p class="footer">Ha valami problémát észlelsz, írd meg nekem.</p>
+      </div>
+    </div>
+
+  </div>
+  
+  <script type="module">
+    import {ReadableStream, WritableStream, TransformStream} from "https://cdn.jsdelivr.net/npm/@mattiasbuelens/web-streams-polyfill@0.1.0-alpha.5/dist/ponyfill.mjs"
+    window.ReadableStream = window.ReadableStream || ReadableStream
+    window.WritableStream = window.WritableStream || WritableStream
+    window.TransformStream = window.TransformStream ||TransformStream
+  </script>
+  <script src='https://cdn.jsdelivr.net/npm/fetch-readablestream@0.1.0/dist/fetch-readablestream.js'></script>
+  <script type="module" src='index.js'></script>
+
+</body>
+</html>
