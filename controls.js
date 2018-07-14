@@ -68,16 +68,15 @@ window.onresize = () => {
   var {width, height} = document.body.getBoundingClientRect()
   var {height: controlHeight} = controls.getBoundingClientRect()
   height = height - controlHeight
-  document.styleSheets[0].deleteRule(0)
   
   var rule 
   if(width/height<=16/9){
-    rule = `:root { --width:${width}px; --height:${width*(9/16)}px }`
+    rule = `--width:${width}px; --height:${width*(9/16)}px`
   }
   else{
-    rule = `:root { --width:${height*(16/9)}px; --height:${height}px }`
+    rule = `--width:${height*(16/9)}px; --height:${height}px`
   }
-  document.styleSheets[0].insertRule(rule, 0)
+  document.querySelector("html").style = rule
 }
 window.onresize()
 
