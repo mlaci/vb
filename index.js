@@ -125,14 +125,12 @@ function playerState(media){
   return state
 }
 
-iframe.volume = 0
+
 var iframeApi
 tv.getApi().then(api=>{
   info.classList.add("hidden")
 
   iframeApi = api
-
-  iframe.volume = 1
 
   tv.start()
   radio.start()

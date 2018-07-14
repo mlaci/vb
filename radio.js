@@ -147,9 +147,7 @@ var collectFrames = (length) => new TransformStream({
       if(mpegData.hashes.length>=mpegData.maxSize){
         mpegData.hashes.shift()
       }
-      crypto.subtle.digest('SHA-256', chunk).then(hash=>{
-        mpegData.hashes.push([toHex(new Uint8Array(hash)).slice(0,10), mpegData.count-1])
-      })
+      mpegData.hashes.push([toHex(asmCrypto.SHA256.bytes(chunk)).slice(0,10), mpegData.count-1])
     }
 
     if(this.buffer.length >= length){
