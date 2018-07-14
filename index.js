@@ -1,7 +1,7 @@
-import {iframe, audio} from "/common.js"
-import {userEvents, userDelay, info} from "/controls.js"
-import * as radio from "/radio.js"
-import * as tv from "/tv.js"
+import {iframe, audio} from "./common.js"
+import {userEvents, userDelay, info} from "./controls.js"
+import * as radio from "./radio.js"
+import * as tv from "./tv.js"
 
 async function sync(diff){
   audio.pause()

@@ -1,6 +1,6 @@
-import {audio, timecodeServer} from "/common.js"
-import mp4 from "/mp3-in-mp4.js"
-import mpeg from "/mpeg-audio.js"
+import {audio, timecodeServer} from "./common.js"
+import mp4 from "./mp3-in-mp4.js"
+import mpeg from "./mpeg-audio.js"
 
 const mp3Mime = 'audio/mpeg'
 const mp4Mime = 'audio/mp4;codec="mp3"'

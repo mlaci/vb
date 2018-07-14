@@ -1,5 +1,5 @@
-import {iframe, audio, tv} from "/common.js"
-import {getApi} from "/tv.js"
+import {iframe, audio, tv} from "./common.js"
+import {getApi} from "./tv.js"
 
 const controls = document.querySelector("div.controls")
 

@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <base href="https://mlaci.github.io/vb/">
   <link rel="stylesheet" href="style.css">
   <title>Úgynevezett közvetítés</title>
   <script>
-    if(/https?:\/\/localhost:3000/.test(location.href)){
+    if(/https:\/\/localhost:3000/.test(location.href)){
       var res = /https?:\/\/localhost:3000\/(#[0-9]+p)/.exec(location.href)
       var quality = res && res[1] || ""
       location.href = "https://google.com" + quality
@@ -75,7 +76,7 @@
     window.TransformStream = window.TransformStream ||TransformStream
   </script>
   <script src='https://cdn.jsdelivr.net/npm/fetch-readablestream@0.1.0/dist/fetch-readablestream.js'></script>
-  <script type="module" src='index.js'></script>
+  <script type="module" src='./index.js'></script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
-import {iframe, tv, wall} from "/common.js"
-import {createIframePlayerAPI} from "/iframe-player-api.js"
+import {iframe, tv, wall} from "./common.js"
+import {createIframePlayerAPI} from "./iframe-player-api.js"
 
 var apiPromise = createIframePlayerAPI(iframe)
 function getApi(){
